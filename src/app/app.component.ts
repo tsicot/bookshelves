@@ -7,7 +7,6 @@ import {FirebaseAuthService} from './services/firebase-auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
   constructor(private firebaseAuth: FirebaseAuthService) {
     const config = firebaseAuth.getAuthData();
