@@ -1,6 +1,4 @@
-import {Component} from '@angular/core';
-import * as firebase from 'firebase';
-import {FirebaseAuthService} from './services/firebase-auth.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +6,5 @@ import {FirebaseAuthService} from './services/firebase-auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private firebaseAuth: FirebaseAuthService) {
-    const config = firebaseAuth.getAuthData();
-
-    firebase.initializeApp(config);
-  }
+  title = 'bookshelves';
 }
