@@ -1,3 +1,10 @@
-<p>
-  book works!
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <img style="max-width: 400px" *ngIf="book.photo" [src]="book.photo" alt="Book image">
+  </div>
+  <div class="col-md-6 ">
+    <button class="btn btn-default pull-right" (click)="onBack()">Retour </button>
+    <h1>{{book.titre}}</h1>
+    <h2>{{book.auteur}}</h2>
+  </div>
+</div>
