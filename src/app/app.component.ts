@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import * as firebase from 'firebase';
+import {FirebaseAuthService} from './services/firebase-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,9 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor() {
-    const config = {
-      apiKey: 'AIzaSyB5to5lbCbIXEVWqIIsV-vTDXPRPDDNGqc',
-      authDomain: 'bookshelves-fdea2.firebaseapp.com',
-      databaseURL: 'https://bookshelves-fdea2.firebaseio.com',
-      projectId: 'bookshelves-fdea2',
-      storageBucket: 'bookshelves-fdea2.appspot.com',
-      messagingSenderId: '108673099194'
-    };
+  constructor(private firebaseAuth: FirebaseAuthService) {
+    const config = firebaseAuth.getAuthData();
+
     firebase.initializeApp(config);
   }
 }
